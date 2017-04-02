@@ -2,7 +2,7 @@ package com.gpetuhov.android.samplegson;
 
 import com.google.gson.annotations.SerializedName;
 
-// Class to be serialized/deserialized by Gson
+// Class to be serialized / deserialized by Gson in simple example
 public class Animal {
 
     // Annotation tells how this field will be named in JSON

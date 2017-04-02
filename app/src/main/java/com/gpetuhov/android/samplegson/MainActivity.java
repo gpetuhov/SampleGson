@@ -16,8 +16,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         simpleGsonExample();
+
+        deserializationGsonExample();
     }
 
+    // This is just simple example of serialization / deserialization
     private void simpleGsonExample() {
         // Create new animal
         Animal animal = new Animal("Dog", "Butch", 5);
@@ -34,5 +37,11 @@ public class MainActivity extends AppCompatActivity {
         Animal animal2 = gson.fromJson(animalJson, Animal.class);
 
         Log.d(LOG_TAG, "Deserialized to " + animal2.toString());
+    }
+
+    // Deserialize JSON string received from the network.
+    // Gson is used separately from Retrofit.
+    private void deserializationGsonExample() {
+        new QuakeFetcher().fetchQuakes();
     }
 }
