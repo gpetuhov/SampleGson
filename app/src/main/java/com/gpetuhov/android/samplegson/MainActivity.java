@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
         simpleGsonExample();
 
         deserializationGsonExample();
+
+        deserializationGsonInRetrofitExample();
     }
 
     // This is just simple example of serialization / deserialization
@@ -43,5 +45,11 @@ public class MainActivity extends AppCompatActivity {
     // Gson is used separately from Retrofit.
     private void deserializationGsonExample() {
         new QuakeFetcher().fetchQuakes();
+    }
+
+    // Deserialize JSON string received from the network.
+    // Gson is used inside Retrofit, so Retrofit returns already deserialized data
+    private void deserializationGsonInRetrofitExample() {
+        new QuakeFetcher().fetchQuakesWithGsonAttachedToRetrofit();
     }
 }
